@@ -12,6 +12,8 @@
 
 // const len = Math.ceil(Math.log10(num + 1)); faster way to get length of a string
 // start 4:30
+// break for an hour - dinner
+// end 6:47
 
 function sameFrequency(num1, num2){
     // good luck. Add any arguments you deem necessary.
@@ -41,3 +43,4 @@ function sameFrequency(num1, num2){
 
 console.log(sameFrequency(22,22))
 console.log(sameFrequency(22,222))
+console.log(1234, 4321)
