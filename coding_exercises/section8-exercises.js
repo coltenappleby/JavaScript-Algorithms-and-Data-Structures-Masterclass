@@ -45,4 +45,23 @@ function productOfArray(arr){
 // console.log(productOfArray([1,2,3,10])) // 60
 
 
-// ** Coding Exercise 12: productOfArray **
+// ** Coding Exercise 13: recursiveRange **
+
+function recursiveRange(num){
+    if(num === 0) return 0
+    return num + recursiveRange(num-1)
+}
+// console.log(recursiveRange(6)) // 21
+// console.log(recursiveRange(10)) // 55 
+
+
+// ** Coding Exercise 14: fib **
+
+function fib(n){
+    if (n <= 2) return 1;
+    return fib(n-1) + fib(n-2)
+} 
+// console.log(fib(4)) // 3
+// console.log(fib(10)) // 55
+// console.log(fib(28)) // 317811
+// console.log(fib(35)) // 9227465
