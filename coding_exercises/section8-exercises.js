@@ -16,5 +16,12 @@ function power(num1, num2) {
     return num1 * power(num1, num2-1)
 }
 
+function power(num1, num2) {
+    // should return the power of the base to the exponent
+    if (num2 === 0) return 1
+    
+    return num1 * power(num1, num2-1)
+}
+
 console.log(power(2, 3))
 console.log(power(2, 4))
