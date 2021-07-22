@@ -19,9 +19,32 @@ function power(num1, num2) {
 function power(num1, num2) {
     // should return the power of the base to the exponent
     if (num2 === 0) return 1
-    
+
     return num1 * power(num1, num2-1)
 }
 
 console.log(power(2, 3))
 console.log(power(2, 4))
+
+
+// ** Coding Exercise 10: factorial **
+
+// factorial(1) // 1
+// factorial(2) // 2
+// factorial(4) // 24
+// factorial(7) // 5040
+
+function factorial(num){
+   if (num === 0) return 1
+   return num * factorial(num-1)
+}
+
+
+// ** Coding Exercise 10: productOfArray **
+
+function productOfArray(arr){
+    if(arr.length === 1) return arr[0]
+    return arr[0] * helper(arr.slice(1))
+}
+console.log(productOfArray([1,2,3])) // 6
+console.log(productOfArray([1,2,3,10])) // 60
