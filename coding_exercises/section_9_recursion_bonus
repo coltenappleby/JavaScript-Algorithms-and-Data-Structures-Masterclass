@@ -1,0 +1,9 @@
+// Coding Exercise 15: reverse
+
+
+function reverse(){
+  // add whatever parameters you deem necessary - good luck!
+}
+
+// reverse('awesome') // 'emosewa'
+// reverse('rithmschool') // 'loohcsmhtir'
