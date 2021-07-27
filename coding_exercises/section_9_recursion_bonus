@@ -1,9 +1,27 @@
 // Coding Exercise 15: reverse
 
 
-function reverse(){
-  // add whatever parameters you deem necessary - good luck!
+
+
+function reverse(word){
+    
+    let temp = []
+
+    function helper(word){
+        if(word.length === 1){
+//             console.log("end")
+            return word
+        } else {
+            console.log(word)
+            return helper(word.slice(1)) + temp.push(word[0])
+        }
+    }
+
+    return helper(word)
+
+    
+    
 }
 
-// reverse('awesome') // 'emosewa'
+console.log(reverse('awesome')) // 'emosewa'
 // reverse('rithmschool') // 'loohcsmhtir'
