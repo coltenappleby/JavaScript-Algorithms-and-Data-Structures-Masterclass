@@ -46,3 +46,11 @@ const quickSort = (arr, left=0, right=arr.length) => {
 let array1 = [5, 2, 1, 8, 9, 7, 9, 0, -1]
 console.log(quickSort(array1))
 console.log(array1)
+
+// big O: Time O(n log n) -- Best Case
+// -- same as merge 
+// O(log n) decompositions
+// Worst Case - O(n^2) 
+// --- Think [1,2,3,4]
+// --- Start pivot at index: 0 -- Nothing goes to the left of it
+// --- You have to loop through each element and compare each element
