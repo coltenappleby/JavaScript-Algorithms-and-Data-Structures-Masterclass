@@ -17,10 +17,20 @@ class Student { // CamelCase - start with capital letter
     }
     markLate() {//instance method
         this.tardies += 1; 
+        if (this.tardies >= 0){
+            return `you are suspended!!`
+        }
         return `${this.firstName} ${this.lastName} has been late ${this.tardies}!`
+    }
+
+    static enrollStudents(...students){ //class method 
+        return `ENROLL STUDENTS`
     }
 }
 
 let firstStudent = new Student("Colten", "Appleby") // year will be undefined
 let secondStudent = new Student("Colt" , "Steele", 10) // year will be 10
 console.log(firstStudent.fullName)
+
+Student.entrollStudents([firstName, lastName])
+console.log(entrollStudents)
