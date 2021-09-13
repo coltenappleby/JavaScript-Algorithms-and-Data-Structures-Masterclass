@@ -88,6 +88,17 @@ class SinglyLinkedList {
     //     if(this.length === 1){this.tail = this.head}
     //     return this;
     // }
+
+    // get - indexing - takes in a number and return the number at that index
+    get(ind) {
+        if(ind >= this.length || ind < 0) return null;
+        let currentNode = this.head;
+        for(let i = 0; i < ind; i++){
+            currentNode = currentNode.next
+            i++;
+        }
+        return currentNode;
+    }
 }
 
 var list = new SinglyLinkedList()
