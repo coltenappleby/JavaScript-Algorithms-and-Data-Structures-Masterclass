@@ -76,11 +76,18 @@ class SinglyLinkedList {
             this.head = newHead;
         }
         this.length++;
-        
-        
-        
         return this;
     }
+    // Both ways work
+    // unshift(val) {
+    //     let oldHead = this.head;
+    //     let newHead = new Node(val)
+    //     newHead.next = oldHead;
+    //     this.head = newHead;
+    //     this.length++;
+    //     if(this.length === 1){this.tail = this.head}
+    //     return this;
+    // }
 }
 
 var list = new SinglyLinkedList()
