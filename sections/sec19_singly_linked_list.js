@@ -66,12 +66,19 @@ class SinglyLinkedList {
     }
     //unshifting - adding a new node to the beginning of the Linked List.
     unshift(val) {
-        let oldHead = this.head;
         let newHead = new Node(val)
-        newHead.next = oldHead;
-        this.head = newHead;
+        if(!this.head){
+            this.head = newHead;
+            this.tail = newHead;
+        } else{
+            let oldHead = this.head;
+            newHead.next = oldHead;
+            this.head = newHead;
+        }
         this.length++;
-        if(this.length === 1){this.tail = this.head}
+        
+        
+        
         return this;
     }
 }
