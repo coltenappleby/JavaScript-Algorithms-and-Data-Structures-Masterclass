@@ -32,17 +32,33 @@ class SinglyLinkedList {
         if(!this.head) return undefined;
 
         let currentNode = this.head;
-        while(currentNode !== this.tail){
-            if(currentNode.next !== this.tail){
-                this.tail = currentNode
-                this.tail.next = null
-                //delete this.tail
-            }
-
-
-
-            currentNode = currentNode.next
+        let newTail = currentNode;
+        while(currentNode.next){
+            newTail = currentNode;
+            currentNode = currentNode.next;
         }
+        this.length--;
+        this.tail = newTail;
+        this.tail.next = null;
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
+        return this;
+    }
+
+    //shift - remove a node from the beginning and return it
+    shift() {
+        if(!this.head) return undefined;
+        let oldHead = this.head;
+        let newHead = oldHead.next;
+        oldHead.next = null; // Colt steele leaves this off - will it cause memory leakage?
+        this.head = newHead;
+        this.length--;
+        if(this.length === 0){
+            this.tail = null;
+        }
+        return oldHead;
     }
 }
 
