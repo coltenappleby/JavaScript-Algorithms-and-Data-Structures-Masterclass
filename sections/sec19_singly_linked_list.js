@@ -99,6 +99,13 @@ class SinglyLinkedList {
         }
         return currentNode;
     }
+
+    // set -- accept an index and a new value -- will replace value at the given index
+    set(index, value){
+        let node = get(index);
+        node.value = value;
+        return node
+    }
 }
 
 var list = new SinglyLinkedList()
