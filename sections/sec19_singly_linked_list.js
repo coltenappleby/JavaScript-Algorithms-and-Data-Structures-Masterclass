@@ -13,6 +13,10 @@ class SinglyLinkedList {
         this.tail = null;
         this.length = 0;
     }
+
+    first(){
+        return this.head;
+    }
     // push
     push(val){ 
         let newNode = new Node(val);
@@ -28,7 +32,7 @@ class SinglyLinkedList {
     }
 
     // pop
-    pop(val) {
+    pop() {
         if(!this.head) return undefined;
 
         let currentNode = this.head;
@@ -59,6 +63,16 @@ class SinglyLinkedList {
             this.tail = null;
         }
         return oldHead;
+    }
+    //unshifting - adding a new node to the beginning of the Linked List.
+    unshift(val) {
+        let oldHead = this.head;
+        let newHead = new Node(val)
+        newHead.next = oldHead;
+        this.head = newHead;
+        this.length++;
+        if(this.length === 1){this.tail = this.head}
+        return this;
     }
 }
 
