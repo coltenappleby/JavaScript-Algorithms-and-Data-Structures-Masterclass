@@ -14,6 +14,7 @@ class SinglyLinkedList {
         this.length = 0;
     }
 
+
     first(){
         return this.head;
     }
@@ -99,12 +100,32 @@ class SinglyLinkedList {
         }
         return currentNode;
     }
-
     // set -- accept an index and a new value -- will replace value at the given index
     set(index, value){
         let node = get(index);
+        if(!node) return false;
         node.value = value;
-        return node
+        return true;
+    }
+
+    // insert - add a node to the Linked List at a specific position
+
+    insert(index, value){
+        if(index > this.length || index < 0) return null;
+        let newNode = new Node(value)
+        if(index === 0){
+            this.unshift(value)
+        } else if(index === this.length) {
+            this.push(value)
+        } else {
+            let node = this.get(index-1)
+            newNode.next = node.next;
+            node.next = newNode;
+        }
+       
+
+        this.length++;
+        return this;
     }
 }
 
