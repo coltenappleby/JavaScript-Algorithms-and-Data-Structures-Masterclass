@@ -133,18 +133,20 @@ class SinglyLinkedList {
         if(index === this.length-1) this.pop()
         if(index === 0) this.shift()
 
-        let count = 0
-        let nodeBeforeRemoved = this.head
-        while(count < index-1){
-            nodeBeforeRemoved.next
-            count++;
-        }
-        
-        
-        let nodeAfterRemoved = nodeBeforeRemoved.next.next
-
+        let nodeBeforeRemoved = this.get(index-1)
+        nodeBeforeRemoved.next = nodeBeforeRemoved.next.next
 
         return this
+    }
+
+    printAsArray(){
+        let arr = []
+        let node = this.head
+        for(let i=0;i<this.length;i++){
+            arr.push(node.val)
+            node = node.next
+        }
+        return(arr)
     }
 }
 
