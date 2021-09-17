@@ -14,7 +14,6 @@ class SinglyLinkedList {
         this.length = 0;
     }
 
-
     first(){
         return this.head;
     }
@@ -135,18 +134,35 @@ class SinglyLinkedList {
 
         let nodeBeforeRemoved = this.get(index-1)
         nodeBeforeRemoved.next = nodeBeforeRemoved.next.next
+        this.length--;
+        this.tail = nodeBeforeRemoved.next;
 
         return this
     }
 
-    printAsArray(){
-        let arr = []
+    reverse(){
         let node = this.head
-        for(let i=0;i<this.length;i++){
-            arr.push(node.val)
-            node = node.next
+        this.head = this.tail
+        this.tail = node
+        let prev = null;
+
+        for(let i = 0; i < this.length; i++) {
+            let oldNextNode = node.next
+            node.next = prev
+            prev = node
+            node = oldNextNode
         }
-        return(arr)
+        return this;
+    }
+
+    print(){
+        let arr = []
+        let current = this.head
+        while(current){
+            arr.push(current.val)
+            current = current.next
+        }
+        console.log(arr)
     }
 }
 
