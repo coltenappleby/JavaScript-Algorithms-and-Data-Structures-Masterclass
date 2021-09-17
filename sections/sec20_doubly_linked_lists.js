@@ -94,6 +94,7 @@ class DoublyLinkedList{
     }
 
     get(index){
+        if(index < 0 || index > this.length) return null;
         let node = this.head;
         for(let i = 0; i < this.length; i++){
             node = node.next
@@ -101,6 +102,14 @@ class DoublyLinkedList{
         return node;
 
     };
+
+    set(index,value){
+        if(index < 0 || index > this.length) return null;
+        let node = get(index);
+        node.val = values;
+        return node
+
+    }
 }
 
 
