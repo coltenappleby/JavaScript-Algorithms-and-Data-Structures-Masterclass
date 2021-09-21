@@ -70,16 +70,17 @@ class DoublyLinkedList{
 
     shift(){ // remove from beginning
         if(!this.head) return null;
-        if(this.head === this.tail){
+        this.head = shiftedNode.next;
+        if(this.length === 1){
             this.head = null;
             this.tail = null;
+        } else {
+            let shiftedNode = this.head;
+            this.head.prev = null;
+            shiftedNode.next = null;
         }
-        let shiftedNode = this.head;
-        this.head = shiftedNode.next;
-        this.head.prev = null;
-        shiftedNode.next = null;
         this.length--;
-        return shiftedNode
+        return shiftedNode;
     }
 
     unshift(value){ // add to beginning
@@ -95,19 +96,32 @@ class DoublyLinkedList{
 
     get(index){
         if(index < 0 || index > this.length) return null;
-        let node = this.head;
-        for(let i = 0; i < this.length; i++){
-            node = node.next
+
+        if(index <= this.length){
+            let node = this.head;
+            for(let i = 0; i < this.length; i++){
+                node = node.next
+            }
+        } else {
+            let node = this.tail;
+            for(let i = this.length; i > 0; i--){
+                node = node.prev
+            }
         }
+
         return node;
+        
 
     };
 
     set(index,value){
-        if(index < 0 || index > this.length) return null;
+        // if(index < 0 || index > this.length) return null;
         let node = get(index);
-        node.val = values;
-        return node
+        if(node != null){
+            node.val = value;
+            return true;
+        }
+        return false;
 
     }
 }
