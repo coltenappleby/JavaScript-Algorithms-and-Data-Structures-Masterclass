@@ -96,25 +96,22 @@ class DoublyLinkedList{
 
     get(index){
         if(index < 0 || index > this.length) return null;
-
+        let node;
         if(index <= this.length){
-            let node = this.head;
+            node = this.head;
             for(let i = 0; i < this.length; i++){
                 node = node.next
             }
         } else {
-            let node = this.tail;
+            node = this.tail;
             for(let i = this.length; i > 0; i--){
                 node = node.prev
             }
         }
-
         return node;
-        
-
     };
 
-    set(index,value){
+    set(index, value){
         // if(index < 0 || index > this.length) return null;
         let node = get(index);
         if(node != null){
@@ -124,10 +121,25 @@ class DoublyLinkedList{
         return false;
 
     }
+
+    insert(index, value){
+        if(!this.head) return null;
+        if(index < 0 || index > this.head) return null;
+        if(index === this.length) this.push(value);
+        if(index === 0) this.unshift(value);
+        let insertNode = new Node(value);
+        let nextNode = this.get(index);
+        let prevNode = nextNode.prev; // get is not working correctly
+        prevNode.next = insertNode;
+        insertNode.prev = prevNode;
+        insertNode.next = nextNode;
+        nextNode.prev = insertNode;
+        return insertNode;
+    }
 }
 
 
-
+clear()
 // Tests
 let list = new DoublyLinkedList()
 list.push("first")
