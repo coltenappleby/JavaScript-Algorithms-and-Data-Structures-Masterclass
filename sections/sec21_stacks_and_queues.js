@@ -26,6 +26,10 @@ class Stack{
     }
 
     pop(){ // remove from beginning
-
+        if(this.length === 0) return null;
+        let node = this.end;
+        this.end = node.prev;
+        node.prev = null;
+        return node;
     }
 }
