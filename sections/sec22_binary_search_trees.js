@@ -1,17 +1,17 @@
 //  Everything to the left is smaller
 // Everything to the right is larger
 
-class BinarySearchTree {
-    constructor(){
-         this.root = null;
-    }
-}
-
-class Node(val) {
-    constructor(){
+class Node {
+    constructor(val){
         this.value = val;
         this.left = null;
         this.right = null;
+    }
+}
+
+class BinarySearchTree {
+    constructor(){
+         this.root = null;
     }
 }
 
