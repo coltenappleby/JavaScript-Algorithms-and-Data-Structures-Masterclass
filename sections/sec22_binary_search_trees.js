@@ -13,6 +13,37 @@ class BinarySearchTree {
     constructor(){
          this.root = null;
     }
+
+    insert(val) {
+        let newNode = new Node(val)
+        if(this.root === null){
+            this.root = newNode;
+            return newNode;
+        }
+        let curr = this.root;
+        while(true) {
+            if(val > curr.value){
+                if(curr.right === null){
+                    curr.right = newNode
+                    return this
+                } else {
+                    curr.right = curr
+                    continue
+                }
+                
+            } else if(val < curr.value) {
+                if(curr.left === null){
+                    curr.left = newNode
+                    return this
+                } else {
+                    curr.left = curr
+                    continue
+                }
+            } else {
+                return this
+            }
+        }
+    }
 }
 
 
